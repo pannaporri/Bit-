@@ -1,22 +1,26 @@
 #include <bits/stdc++.h>
+#include <iostream>
+#include <string>
 using namespace std;
 int main(){
     int n;
     cin>>n;
     int x=0;
     string op;
-    while(n--){
-        cin>>op;
-        int k=op.length();
-        for(int i=0;i<k;i++){
-            if(op[i]=="+"){
-                x+=1;
-                return 0;
-            }
-            else if(op[i]=="-"){
-                x-=1;
-                return 0;
-            }
+    string p="++";
+    string m="--";
+    while(n>-1){
+        getline(cin, op);
+        if(op.find(p)!=string::npos){
+            x+=1;
+ 
         }
-    }
-}
+        else if(op.find(m)!=string::npos){
+            x-=1;
+        }
+n=n-1;
+ 
+            }
+            cout<<x<<endl;
+            return 0;
+        }
